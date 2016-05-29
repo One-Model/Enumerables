@@ -1,2 +1,3 @@
 # Enumerables
-Extensions for enumerables and collections.
+Contains extension methods for .NET collection types (*ICollection<T>, IEnumerable<T>, IList<T>* etc).
+

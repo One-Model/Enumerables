@@ -1,0 +1,18 @@
+version: 1.0.0.{build}
+branches:
+  only:
+  - master
+image: Visual Studio 2015
+configuration: Release
+nuget:
+  account_feed: true
+before_build:
+- cmd: >-
+    appveyor DownloadFile https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+
+    appveyor DownloadFile https://raw.githubusercontent.com/appveyor/ci/master/scripts/nuget-restore.cmd
+
+    nuget-restore -verbosity detailed
+build:
+  publish_nuget: true
+  verbosity: minimal
