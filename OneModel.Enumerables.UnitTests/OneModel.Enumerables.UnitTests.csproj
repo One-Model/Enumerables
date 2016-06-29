@@ -67,6 +67,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ICollection\AddRangeExtensionsTests.cs" />
+    <Compile Include="ICollection\IsNullOrEmptyExtensionsTests.cs" />
     <Compile Include="ICollection\RemoveRangeExtensionsTests.cs" />
     <Compile Include="IEnumerable\DistinctExtensionsTests.cs" />
     <Compile Include="IEnumerable\FindIndexExtensionsTests.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="IEnumerable\ToExtensionsTests.cs" />
     <Compile Include="IEnumerable\ToIndexExtensionsTests.cs" />
     <Compile Include="IEnumerable\VennExtensionsTests.cs" />
+    <Compile Include="IEnumerable\IsNullOrEmptyExtensionsTests.cs" />
     <Compile Include="IList\RemoveExtensionsTests.cs" />
     <Compile Include="IList\TakeAndRemoveExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

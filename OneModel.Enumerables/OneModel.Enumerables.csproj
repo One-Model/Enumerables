@@ -43,12 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICollection\AddRangeExtensions.cs" />
+    <Compile Include="ICollection\IsNullOrEmptyExtensions.cs" />
     <Compile Include="ICollection\RemoveRangeExtensions.cs" />
     <Compile Include="IEnumerable\DistinctBehaviour.cs" />
     <Compile Include="IEnumerable\DistinctExtensions.cs" />
     <Compile Include="IEnumerable\ExceptExtensions.cs" />
     <Compile Include="IEnumerable\FindIndexExtensions.cs" />
     <Compile Include="IEnumerable\FlattenExtensions.cs" />
+    <Compile Include="IEnumerable\IsNullOrEmptyExtensions.cs" />
     <Compile Include="IEnumerable\MaxExtensions.cs" />
     <Compile Include="IEnumerable\MinExtensions.cs" />
     <Compile Include="IEnumerable\MostCommonExtensions.cs" />
