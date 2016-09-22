@@ -69,6 +69,7 @@
     <Compile Include="ICollection\AddRangeExtensionsTests.cs" />
     <Compile Include="ICollection\IsNullOrEmptyExtensionsTests.cs" />
     <Compile Include="ICollection\RemoveRangeExtensionsTests.cs" />
+    <Compile Include="IEnumerable\ComputeHashCodeExtensionsTests.cs" />
     <Compile Include="IEnumerable\DistinctExtensionsTests.cs" />
     <Compile Include="IEnumerable\FindIndexExtensionsTests.cs" />
     <Compile Include="IEnumerable\FlattenExtensionsTests.cs" />
