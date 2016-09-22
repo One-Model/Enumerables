@@ -82,6 +82,7 @@
     <Compile Include="IEnumerable\ToIndexExtensionsTests.cs" />
     <Compile Include="IEnumerable\VennExtensionsTests.cs" />
     <Compile Include="IEnumerable\IsNullOrEmptyExtensionsTests.cs" />
+    <Compile Include="IList\AppendExtensionsTests.cs" />
     <Compile Include="IList\RemoveExtensionsTests.cs" />
     <Compile Include="IList\TakeAndRemoveExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

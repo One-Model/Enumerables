@@ -61,6 +61,7 @@
     <Compile Include="IEnumerable\ToIndexExtensions.cs" />
     <Compile Include="IEnumerable\VennExtensions.cs" />
     <Compile Include="IIndex.cs" />
+    <Compile Include="IList\AppendExtensions.cs" />
     <Compile Include="IList\RemoveExtensions.cs" />
     <Compile Include="IList\TakeAndRemoveExtensions.cs" />
     <Compile Include="Index.cs" />
