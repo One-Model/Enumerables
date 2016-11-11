@@ -46,6 +46,7 @@
     <Compile Include="ICollection\IsNullOrEmptyExtensions.cs" />
     <Compile Include="ICollection\RemoveRangeExtensions.cs" />
     <Compile Include="IEnumerable\ComputeHashCodeExtensions.cs" />
+    <Compile Include="IEnumerable\ConcatExtensions.cs" />
     <Compile Include="IEnumerable\DistinctBehaviour.cs" />
     <Compile Include="IEnumerable\DistinctExtensions.cs" />
     <Compile Include="IEnumerable\ExceptExtensions.cs" />
