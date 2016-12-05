@@ -42,6 +42,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICollection\AddIfNotPresentExtensions.cs" />
     <Compile Include="ICollection\AddRangeExtensions.cs" />
     <Compile Include="ICollection\IsNullOrEmptyExtensions.cs" />
     <Compile Include="ICollection\RemoveRangeExtensions.cs" />
