@@ -81,6 +81,7 @@
     <Compile Include="IEnumerable\OrderByIdsExtensionsTests.cs" />
     <Compile Include="IEnumerable\PermuteExtensionsTests.cs" />
     <Compile Include="IEnumerable\ProjectExtensionsTests.cs" />
+    <Compile Include="IEnumerable\ToReadOnlyCollectionExtensionsTests.cs" />
     <Compile Include="IEnumerable\ToExtensionsTests.cs" />
     <Compile Include="IEnumerable\ToIndexExtensionsTests.cs" />
     <Compile Include="IEnumerable\VennExtensionsTests.cs" />

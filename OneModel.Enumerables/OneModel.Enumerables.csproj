@@ -62,6 +62,7 @@
     <Compile Include="IEnumerable\ProjectExtensions.cs" />
     <Compile Include="IEnumerable\ToExtensions.cs" />
     <Compile Include="IEnumerable\ToIndexExtensions.cs" />
+    <Compile Include="IEnumerable\ToReadOnlyCollectionExtensions.cs" />
     <Compile Include="IEnumerable\VennExtensions.cs" />
     <Compile Include="IIndex.cs" />
     <Compile Include="IList\AppendExtensions.cs" />
