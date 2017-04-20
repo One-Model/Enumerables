@@ -43,5 +43,19 @@ namespace OneModel.Enumerables
 
             return new VennResult<TLeft, TRight>(l, r, b);
         }
+
+        /// <summary>
+        /// Same as <see cref="Venn{TLeft, TRight, TKey}(IEnumerable{TLeft}, IEnumerable{TRight}, Func{TLeft, TKey}, Func{TRight, TKey})"/> 
+        /// except it accepts two sets of the same type, and so only requires one key selector which is applied
+        /// to both sets.
+        /// </summary>
+        public static VennResult<T, T> Venn<T, TKey>(this IEnumerable<T> left, IEnumerable<T> right, Func<T, TKey> keySelector)
+            => left.Venn(right, keySelector, keySelector);
+
+        /// <summary>
+        /// Same as <see cref="Venn{T, TKey}(IEnumerable{T}, IEnumerable{T}, Func{T, TKey})"/> 
+        /// except the objects in each set are their own keys, which can be compared meaningfully.
+        /// </summary>
+        public static VennResult<T, T> Venn<T>(this IEnumerable<T> left, IEnumerable<T> right) => left.Venn(right, x => x);
     }
 }
