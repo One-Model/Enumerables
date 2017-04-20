@@ -73,6 +73,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StackExtensions.cs" />
     <Compile Include="VennResult.cs" />
+    <Compile Include="VennResultExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="OneModel.Enumerables.nuspec">
