@@ -42,10 +42,12 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BufferedEnumerable.cs" />
     <Compile Include="ICollection\AddIfNotPresentExtensions.cs" />
     <Compile Include="ICollection\AddRangeExtensions.cs" />
     <Compile Include="ICollection\IsNullOrEmptyExtensions.cs" />
     <Compile Include="ICollection\RemoveRangeExtensions.cs" />
+    <Compile Include="IEnumerable\BufferExtensions.cs" />
     <Compile Include="IEnumerable\ComputeHashCodeExtensions.cs" />
     <Compile Include="IEnumerable\ConcatExtensions.cs" />
     <Compile Include="IEnumerable\DistinctBehaviour.cs" />
