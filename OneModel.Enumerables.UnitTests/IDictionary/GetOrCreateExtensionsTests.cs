@@ -58,5 +58,30 @@ namespace OneModel.Enumerables.UnitTests.IDictionary
             Assert.Same(oldInstance, source[1]);
         }
 
+        [Fact]
+        public void New_Value_Can_Be_Created_With_Parameterless_Constructor()
+        {
+            var source = new Dictionary<int, object>();
+
+            var actual = source.GetOrCreate(1);
+            Assert.Equal(1, source.Count);
+            Assert.NotNull(actual);
+        }
+
+        [Fact]
+        public void Old_Value_Can_Be_Returned_With_Parameterless_Constructor()
+        {
+            var oldInstance = new object();
+
+            var source = new Dictionary<int, object>
+            {
+                { 1, oldInstance }
+            };
+
+            var actual = source.GetOrCreate(2);
+            Assert.Equal(2, source.Count);
+            Assert.NotNull(actual);
+            Assert.NotSame(oldInstance, actual);
+        }
     }
 }

@@ -33,5 +33,16 @@ namespace OneModel.Enumerables
 
             return existing;
         }
+
+        /// <summary>
+        /// Retrieves the item with the given key from the dictionary. If no item
+        /// is found, then a new instance of TValue will be created using the 
+        /// parameterless constructor, added to the dictionary, and then
+        /// returned.
+        /// </summary>
+        public static TValue GetOrCreate<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key) where TValue : new()
+        {
+            return dictionary.GetOrCreate(key, () => new TValue());
+        }
     }
 }
