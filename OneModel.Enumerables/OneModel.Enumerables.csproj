@@ -47,6 +47,7 @@
     <Compile Include="ICollection\AddRangeExtensions.cs" />
     <Compile Include="ICollection\IsNullOrEmptyExtensions.cs" />
     <Compile Include="ICollection\RemoveRangeExtensions.cs" />
+    <Compile Include="IDictionary\GetOrCreateExtensions.cs" />
     <Compile Include="IEnumerable\BufferExtensions.cs" />
     <Compile Include="IEnumerable\ComputeHashCodeExtensions.cs" />
     <Compile Include="IEnumerable\ConcatExtensions.cs" />
