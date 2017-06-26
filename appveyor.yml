@@ -5,7 +5,7 @@ branches:
 image: Visual Studio 2015
 configuration: Release
 nuget:
-  account_feed: true
+  account_feed: false
 before_build:
 - cmd: >-
     appveyor DownloadFile https://dist.nuget.org/win-x86-commandline/v3.4.4-rc/NuGet.exe
