@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using Xunit;
 
 namespace OneModel.Enumerables.UnitTests.IList
@@ -38,6 +36,33 @@ namespace OneModel.Enumerables.UnitTests.IList
         }
         
         [Fact]
+        public void AppendRange_Array_Throws_Exception_If_Source_Is_Null()
+        {
+            List<int> source = null;
+            Assert.Throws<ArgumentNullException>(() => source.AppendRange(0, 1));
+        }
+
+        [Fact]
+        public void AppendRange_Array_Throws_Exception_If_Items_Array_Is_Null()
+        {
+            List<int> source = new List<int>();
+            Assert.Throws<ArgumentNullException>(() => source.AppendRange((IEnumerable<int>)null));
+        }
+
+        [Fact]
+        public void AppendRange_Array_Inserts_The_Items_At_The_End()
+        {
+            var source = new List<int> { 0, 1 };
+            source.AppendRange(2, 3);
+
+            Assert.Collection(source,
+                item => Assert.Equal(0, item),
+                item => Assert.Equal(1, item),
+                item => Assert.Equal(2, item),
+                item => Assert.Equal(3, item));
+        }
+        
+        [Fact]
         public void AppendRange_Enumerable_Throws_Exception_If_Source_Is_Null()
         {
             List<int> source = null;
@@ -63,27 +88,7 @@ namespace OneModel.Enumerables.UnitTests.IList
                 item => Assert.Equal(2, item),
                 item => Assert.Equal(3, item));
         }
-
-        [Fact]
-        public void List_Is_Returned_As_The_Same_Type()
-        {
-            // Old versions of Append() and AppendRange() would
-            // always return the source list as an IList<T>().
-
-            // This test exists to ensure that there's no loss
-            // of type specificity.
-
-            // ReSharper disable once UnusedVariable
-            // ReSharper disable once SuggestVarOrType_Elsewhere
-            List<int> source = new List<int>()
-                .Append(0);
-
-            // ReSharper disable once UnusedVariable
-            // ReSharper disable once SuggestVarOrType_Elsewhere
-            MockList<int> source2 = new MockList<int>()
-                .Append(0);
-        }
-
+        
         private class MockList<T> : IList<T>
         {
             public IEnumerator<T> GetEnumerator()
