@@ -10,7 +10,7 @@ namespace OneModel.Enumerables
         /// Appends a single item to the end of the list, 
         /// and returns the same list.
         /// </summary>
-        public static IList<T> Append<T>(this IList<T> list, T item)
+        public static TList Append<TList, TItem>(this TList list, TItem item) where TList : IList<TItem>
         {
             if (list == null)
             {
@@ -25,27 +25,7 @@ namespace OneModel.Enumerables
         /// Appends a sequence of items to the end of the list,
         /// and returns the same list.
         /// </summary>
-        public static IList<T> AppendRange<T>(this IList<T> list, IEnumerable<T> items)
-        {
-            if (list == null)
-            {
-                throw new ArgumentNullException(nameof(list));
-            }
-
-            if (items == null)
-            {
-                throw new ArgumentNullException(nameof(items));
-            }
-
-            list.AddRange(items);
-            return list;
-        }
-
-        /// <summary>
-        /// Appends a sequence of items to the end of the list,
-        /// and returns the same list.
-        /// </summary>
-        public static IList<T> AppendRange<T>(this IList<T> list, params T[] items)
+        public static TList AppendRange<TList, TItem>(this TList list, IEnumerable<TItem> items) where TList : IList<TItem>
         {
             if (list == null)
             {
