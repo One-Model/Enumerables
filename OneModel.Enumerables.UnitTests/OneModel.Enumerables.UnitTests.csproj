@@ -67,6 +67,7 @@
     <Compile Include="ICollection\AddRangeExtensionsTests.cs" />
     <Compile Include="ICollection\IsNullOrEmptyExtensionsTests.cs" />
     <Compile Include="ICollection\RemoveRangeExtensionsTests.cs" />
+    <Compile Include="IDictionary\DictionaryEqualExtensionsTests.cs" />
     <Compile Include="IDictionary\GetOrCreateExtensionsTests.cs" />
     <Compile Include="IEnumerable\ComputeHashCodeExtensionsTests.cs" />
     <Compile Include="IEnumerable\ConcatExtensionsTests.cs" />
