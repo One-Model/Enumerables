@@ -18,6 +18,17 @@ namespace OneModel.Enumerables.Tests.IEnumerable
         }
 
         [Fact]
+        public void Project_With_Index_Filters_Out_Default_Values()
+        {
+            var enumerable = new List<int> { 1, 2 };
+
+            var actual = enumerable.Project((item, index) => index % 2 == 0 ? null : item.ToString());
+
+            var expected = new List<string> { "2" };
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void ProjectMany_Filters_Out_Default_Values()
         {
             var enumerable = new List<int[]>

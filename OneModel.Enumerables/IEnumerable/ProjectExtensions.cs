@@ -25,6 +25,28 @@ namespace OneModel.Enumerables
         }
 
         /// <summary>
+        /// For convenience. Projects each element of a sequence into a new form,
+        /// filtering out any projected object that equals default(TOut).
+        /// 
+        /// Identical to .Select((t,i) => {...}).Where(t => !t.Equals(default(T)))
+        /// </summary>
+        public static IEnumerable<TOut> Project<TIn, TOut>(this IEnumerable<TIn> source, Func<TIn, int, TOut> projection)
+        {
+            var i = 0;
+
+            foreach (var item in source)
+            {
+                var result = projection(item, i);
+                if (!Equals(result, default(TOut)))
+                {
+                    yield return result;
+                }
+
+                i++;
+            }
+        }
+
+        /// <summary>
         /// For convenience. Projects each element of a sequence to an IEnumerable&lt;TOut&gt; and
         /// flattens the resulting sequence into one sequence.
         /// 
