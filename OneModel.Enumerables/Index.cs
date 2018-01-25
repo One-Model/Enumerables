@@ -141,5 +141,16 @@ namespace OneModel.Enumerables
                 list.Remove(value);
             }
         }
+        
+        /// <summary>
+        /// Tries to retrieve the values for a key from the index.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="values"></param>
+        /// <returns></returns>
+        public bool TryGetValues(TKey key, out List<TValue> values)
+        {
+            return _storage.TryGetValue(key, out values);
+        }
     }
 }

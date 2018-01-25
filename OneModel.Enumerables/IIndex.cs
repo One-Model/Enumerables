@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace OneModel.Enumerables
 {
@@ -75,5 +76,13 @@ namespace OneModel.Enumerables
         /// Removes all occurrences of an item from this index.
         /// </summary>
         void Remove(TValue value);
+
+        /// <summary>
+        /// Tries to retrieve the values for a key from the index.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="values"></param>
+        /// <returns></returns>
+        bool TryGetValues(TKey key, out List<TValue> values);
     }
 }
