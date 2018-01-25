@@ -8,7 +8,17 @@ namespace OneModel.Enumerables
     /// </summary>
     public class Index<TKey, TValue> : IIndex<TKey, TValue>
     {
-        private readonly Dictionary<TKey, List<TValue>> _storage = new Dictionary<TKey, List<TValue>>();
+        private readonly Dictionary<TKey, List<TValue>> _storage;
+
+        public Index()
+        {
+            _storage = new Dictionary<TKey, List<TValue>>();
+        }
+
+        public Index(IEqualityComparer<TKey> keyComparer)
+        {
+            _storage = new Dictionary<TKey, List<TValue>>(keyComparer);
+        }
 
         /// <summary>
         /// Determines if the given key is present in the lookup.

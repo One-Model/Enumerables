@@ -79,5 +79,51 @@ namespace OneModel.Enumerables.Tests.IEnumerable
             Assert.Contains(index[1], item => item.Value == "a");
             Assert.Contains(index[2], item => item.Value == "a");
         }
+
+        [Fact]
+        public void A_Key_Comparer_Can_Be_Supplied()
+        {
+            var input = new List<MockSingle>
+            {
+                new MockSingle("a", 1),
+                new MockSingle("b", 2),
+                new MockSingle("c", 3),
+                new MockSingle("d", 4),
+                new MockSingle("e", 5),
+                new MockSingle("f", 6)
+            };
+
+            var index = input.ToIndex(
+                item => item.Key,
+                item => item.Value,
+                new ModComparer()
+            );
+            
+            Assert.Collection(index.Collections,
+                i =>
+                {
+                    Assert.Equal(1, i.Key);
+                    Assert.Equal(new[]{ "a", "c", "e" }, i.Value);
+                },
+                i =>
+                {
+                    Assert.Equal(2, i.Key);
+                    Assert.Equal(new[]{ "b", "d", "f" }, i.Value);
+                }
+            );
+        }
+
+        private class ModComparer : IEqualityComparer<int>
+        {
+            public bool Equals(int x, int y)
+            {
+                return x % 2 == y % 2;
+            }
+
+            public int GetHashCode(int obj)
+            {
+                return obj % 2;
+            }
+        }
     }
 }
