@@ -21,7 +21,7 @@ namespace OneModel.Enumerables
 
             unchecked
             {
-                return source.Aggregate(0, (current, item) => (current * 397) ^ item.GetHashCode());
+                return source.Aggregate(0, (current, item) => (current * 397) ^ (item?.GetHashCode() ?? 0));
             }
         }
     }
