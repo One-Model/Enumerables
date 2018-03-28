@@ -21,6 +21,18 @@ namespace OneModel.Enumerables
             var sourceIndices = source.Select(s => 0).ToArray();
             var currentSource = source.Length - 1;
 
+            // If the sourceEnumeration was empty, then return no items
+            if (source.Length == 0)
+            {
+                throw new ArgumentException("Argument can not be empty.");
+            }
+
+            // If one of the items was empty, then return no items
+            if (sourceLengths.Any(s => s == 0))
+            {
+                yield break;
+            }
+
             yield return sourceIndices.Select((p, i) => source[i][p]).ToArray();
 
             while (PermuteMoveNext(sourceLengths, sourceIndices, currentSource))
