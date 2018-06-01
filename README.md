@@ -1,3 +1,1 @@
-# Enumerables
-Contains extension methods for .NET collection types (*ICollection<T>, IEnumerable<T>, IList<T>* etc).
-
+This code has been moved into `OneModel.Core`.
